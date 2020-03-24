@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'iex-ruby-client'
+gem "font-awesome-rails"
 
 gem 'hirb'
 # Reduces boot times through caching; required in config/boot.rb

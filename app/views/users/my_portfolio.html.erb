@@ -2,7 +2,7 @@
 
 <div class="search-area">
   <h3>Search Stock</h3>
-  <%= form_tag search_stock_path, method: :get do %>
+  <%= form_tag search_stock_path, remote: true, method: :get do %>
     <div class="form-group row">
       <div class="col-sm-9 no-right-padding">
         <%= text_field_tag :stock, params[:stock], placeholder: "stock ticker symbol", autofocus: true, class: "form-control form-control-lg" %>
@@ -15,10 +15,10 @@
     </div>
   <% end %>
 </div>
-<% if @stock %>
-<div class="card card-header results-block">
-  <strong>Symbol: </strong> <%= @stock.ticker %>
-  <strong>Name: </strong> <%= @stock.name%>
-  <strong>Last Price:</strong> <%= @stock.last_price%>
-</div
+
+<div id="results">
+</div>
+
+<% if !@tracked_stocks.empty? %>
+  <%= render 'stocks/list'%>
 <% end %>
